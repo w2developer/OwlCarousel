@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OwlCarousel</title>
+
+    <!-- OwlCarousel Links Css -->
+    <link rel="stylesheet" href="/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owlcarousel/owl.theme.default.min.css">
+
+    <style>
+        .carousel {
+            height: 250px;
+            background: #8c8c8c;
+        }
+
+        .item {
+            height: 100px;
+            cursor: pointer;
+            color: #ffffff;
+            user-select: none;
+            background: #000000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="carousel owl-carousel owl-theme">
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+    </div>
+    <div class="carousel owl-carousel owl-theme">
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+        <div class="item"> Your Content </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/owlcarousel/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            // 1️⃣ Básicas de comportamento
+            items: 3,                   // Número de itens visíveis
+            loop: false,                // Repetir ciclo
+            margin: 10,                  // Margem entre itens
+            stagePadding: 0,            // Padding do stage
+            merge: false,               // Mesclar itens de tamanhos diferentes
+            mergeFit: true,             // Ajusta item mesclado ao container
+            autoWidth: false,           // Largura automática baseada no conteúdo
+            startPosition: 0,           // Índice inicial
+            rtl: false,                 // Direita para esquerda
+            smartSpeed: 250,            // Velocidade da transição
+            fluidSpeed: false,          // Velocidade baseada no tamanho do slide
+            dragEndSpeed: false,        // Velocidade ao terminar drag
+            responsiveRefreshRate: 200, // Frequência de atualização (ms)
+            responsiveBaseElement: window, // Base para cálculo de responsividade
+            center: false,              // Centraliza item ativo
+            autoHeight: false,          // Ajusta altura automaticamente
+            freeDrag: false,            // Movimento livre
+            mouseDrag: true,            // Arrastar com mouse
+            touchDrag: true,            // Arrastar no touch
+            pullDrag: true,             // Permite “puxar” e soltar
+            nestedItemSelector: false,  // Para itens internos
+            itemElement: 'div',         // Elemento que representa cada item
+            stageElement: 'div',        // Elemento do stage
+            refreshClass: 'owl-refresh', // Classe durante refresh
+            loadedClass: 'owl-loaded',   // Classe quando carregado
+            loadingClass: 'owl-loading', // Classe quando carregando
+            rtlClass: 'owl-rtl',          // Classe para rtl
+            responsiveClass: 'owl-responsive', // Classe para responsividade
+
+            // 2️⃣ Navegação
+            nav: false,             // Setas de navegação
+            navText: ['<', '>'],    // Conteúdo das setas
+            navSpeed: false,        // Velocidade ao clicar nas setas
+            navElement: 'div',      // Elemento das setas
+            navContainer: false,    // Container customizado das setas
+            navContainerClass: 'owl-nav',  // Classe do container das setas
+            navClass: ['owl-prev', 'owl-next'], // Classes das setas
+            slideBy: 1,             // Quantos itens avançam por vez
+            dotClass: 'owl-dot',    // Classe dos dots
+            dots: false,            // Pontinhos de navegação
+            dotsEach: false,        // Número de itens por dot
+            dotsData: false,        // Utilizar dados customizados no dot
+            dotsSpeed: 300,         // Velocidade da transição via dot
+            dotsContainer: false,   // Container customizado dos dots
+
+            // 3️⃣ Animações
+            animateOut: false,      // Animação ao sair
+            animateIn: false,       // Animação ao entrar
+            autoplay: false,        // Ativar autoplay
+            autoplayTimeout: 5000,  // Intervalo autoplay (ms)
+            autoplayHoverPause: false, // Pausa autoplay ao passar mouse
+            autoplaySpeed: false,   // Velocidade autoplay
+            autoplayDirection: 'ltr', // Direção do autoplay
+            video: false,           // Suporte a vídeos
+            videoHeight: false,     // Altura do vídeo
+            videoWidth: false,      // Largura do vídeo
+            videoLazyLoad: false,   // Lazy load para vídeos
+            lazyLoad: false,        // Carregamento de imagens sob demanda
+            lazyContent: false,     // Lazy load do conteúdo
+            lazyLoadEager: 0,       // Quantos carregar de antemão
+            URLhashListener: false, // Navegação via hash na URL
+            autoplayHoverPause: false,
+
+            // 4️⃣ Responsividade
+            responsive: {           // Itens por resolução
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            },
+
+            // Callbacks / Eventos
+            onInitialize: function(event) {
+                // Disparado ANTES do OwlCarousel iniciar
+                // console.log('onInitialize: o carrossel vai iniciar');
+            },
+            onInitialized: function(event) {
+                // Disparado DEPOIS que o carrossel foi inicializado
+                // console.log('onInitialized: o carrossel foi inicializado');
+            },
+            onResize: function(event) {
+                // Disparado ANTES de recalcular o layout no resize da tela
+                // console.log('onResize: tela sendo redimensionada');
+            },
+            onResized: function(event) {
+                // Disparado DEPOIS que o layout foi recalculado
+                // console.log('onResized: redimensionamento concluído');
+            },
+            onRefresh: function(event) {
+                // Disparado ANTES de atualizar itens ou estrutura do carrossel
+                // console.log('onRefresh: atualização prestes a acontecer');
+            },
+            onRefreshed: function(event) {
+                // Disparado DEPOIS que o carrossel foi atualizado
+                // console.log('onRefreshed: atualização concluída');
+            },
+            onDrag: function(event) {
+                // Disparado QUANDO começa o arraste do carrossel
+                // console.log('onDrag: arraste iniciado');
+            },
+            onDragged: function(event) {
+                // Disparado QUANDO termina o arraste e o slide começa a mover
+                // console.log('onDragged: arraste terminado');
+            },
+            onTranslate: function(event) {
+                // Disparado QUANDO a transição do slide começa
+                // console.log('onTranslate: transição de slide iniciada');
+            },
+            onTranslated: function(event) {
+                // Disparado QUANDO a transição termina e o novo slide está ativo
+                // console.log('onTranslated: transição concluída, novo slide ativo');
+            },
+            onChange: function(event) {
+                // Disparado QUANDO algum valor interno muda (slide ativo, posição, etc.)
+                // console.log('onChange: valor interno do carrossel mudou');
+            },
+            onChanged: function(event) {
+                // Disparado DEPOIS que a mudança interna foi aplicada
+                // console.log('onChanged: mudança interna aplicada');
+            }
+        });
+    })
+</script>
+</body>
+</html>
